@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  margin: 2rem auto 2rem 2rem;
+}
+
+.header h1 {
+  font-weight: 400;
+  font-size: 10rem;
+}
+
+.header h1.smaller {
+  font-size: 4rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}

@@ -1,0 +1,81 @@
+/* EDITOR WRAPPER CONFIGURATION (todo-detail.html)====================================*/
+
+.taskEditor {
+  display: flex;
+
+  justify-content: center;
+  align-content: center;
+}
+
+/* FORM CONFIGURATION (todo-detail.html) ============================================*/
+
+.form {
+  width: 90%;
+  font-size: 1.5rem;
+  border-right: 5px black solid;
+  border-bottom: 5px black solid;
+
+  input {
+    text-align: left;
+    font-size: 1.5rem;
+    padding-left: 0.3rem;
+    margin-left: 0.3rem;
+    min-height: 1.5rem;
+
+    background-color: transparent;
+    border: 1px rgb(75, 75, 75) solid;
+  }
+
+  input:disabled {
+    background-color: #d1d1d3;
+  }
+
+  div.details {
+    width: 100%;
+  }
+
+  .mainInfo {
+    display: flex;
+    padding-top: 1.5rem;
+    border-top: 1px black solid;
+  }
+
+  .mainInfo,
+  .secondaryInfo {
+    margin-bottom: 1.5rem;
+  }
+
+  .details,
+  .mainInfo,
+  .secondaryInfo {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px black solid;
+  }
+
+  .mainInfo label,
+  .secondaryInfo label {
+    margin-right: 3rem;
+  }
+
+  #id {
+    width: 2rem;
+  }
+
+  #description {
+    min-width: 20rem;
+  }
+
+  .details label {
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .qlToolbar {
+    width: 95%;
+  }
+
+  #detailsEditor {
+    min-height: 300px;
+    width: 95%;
+  }
+}

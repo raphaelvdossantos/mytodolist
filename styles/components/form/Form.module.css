@@ -1,0 +1,85 @@
+/* EDITOR WRAPPER CONFIGURATION (todo-detail.html)====================================*/
+.taskEditor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+/* FORM CONFIGURATION (todo-detail.html) ============================================*/
+.form {
+  width: 90%;
+  font-size: 1.5rem;
+  border-right: 5px black solid;
+  border-bottom: 5px black solid;
+}
+
+.form input {
+  text-align: left;
+  font-size: 1.5rem;
+  padding-left: 0.3rem;
+  margin-left: 0.3rem;
+  min-height: 1.5rem;
+  background-color: transparent;
+  border: 1px #4b4b4b solid;
+}
+
+.form input:disabled {
+  background-color: #d1d1d3;
+}
+
+.form div.details {
+  width: 100%;
+}
+
+.form .mainInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 1.5rem;
+  border-top: 1px black solid;
+}
+
+.form .mainInfo,
+.form .secondaryInfo {
+  margin-bottom: 1.5rem;
+}
+
+.form .details,
+.form .mainInfo,
+.form .secondaryInfo {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px black solid;
+}
+
+.form .mainInfo label,
+.form .secondaryInfo label {
+  margin-right: 3rem;
+}
+
+.form #id {
+  width: 2rem;
+}
+
+.form #description {
+  min-width: 20rem;
+}
+
+.form .details label {
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.form .qlToolbar {
+  width: 95%;
+}
+
+.form #detailsEditor {
+  min-height: 300px;
+  width: 95%;
+}
+/*# sourceMappingURL=Form.module.css.map */

@@ -1,0 +1,114 @@
+/* BODY CONFIGURATION (index.html) ===============================================*/
+.outerBox {
+  background: #000000;
+  width: 90%;
+  margin-left: 2rem;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  border: 1px black solid;
+}
+
+.innerBox {
+  border: 1px black solid;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: #e9e9e9;
+  margin-right: -1rem;
+  margin-bottom: -1rem;
+  /* TABLE CONFIGURATION (index.html) ===============================================*/
+}
+
+.innerBox #add a,
+.innerBox #categorization label,
+.innerBox #taskCompletition a {
+  font-family: "Homemade Apple";
+}
+
+.innerBox table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.innerBox a {
+  text-decoration: none;
+  color: black;
+  font-size: 2rem;
+}
+
+.innerBox #add {
+  font-size: 4rem;
+  border-right: 1px black solid;
+  width: 5%;
+}
+
+.innerBox table thead {
+  border-bottom: 1px black solid;
+}
+
+.innerBox table thead,
+.innerBox table tbody {
+  line-height: 3rem;
+}
+
+.innerBox #taskCompletition {
+  width: 15%;
+  padding: 0 1rem;
+}
+
+.innerBox #taskCompletition a {
+  font-size: 1.5rem;
+  margin: 1rem 1rem;
+}
+
+.innerBox #categorization {
+  width: 80%;
+  text-align: end;
+}
+
+.innerBox #categorization label input {
+  margin-left: 1rem;
+  border: 1px black solid;
+  background-color: #f7f7f7;
+  cursor: pointer;
+  line-height: 1.5rem;
+  width: 200px;
+}
+
+.innerBox table tbody tr {
+  border-bottom: 1px black solid;
+}
+
+.innerBox table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.innerBox table tbody .check-column {
+  width: 5%;
+  border-right: 1px black solid;
+}
+
+.innerBox table tbody .task {
+  width: 80%;
+  padding-left: 1rem;
+}
+
+.innerBox table tbody .checkColumn input {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+  display: none;
+}
+
+.innerBox table tbody .gotoTodo {
+  width: 10%;
+}
+
+.innerBox .gotoTodo a {
+  margin-left: 50%;
+}
+
+.innerBox .gotoTodo a img {
+  width: 25px;
+}
+/*# sourceMappingURL=Tasklist.module.css.map */

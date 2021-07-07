@@ -1,0 +1,31 @@
+.nav {
+  width: 90%;
+  margin: 3rem 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.nav .back {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nav img {
+  height: 45px;
+  margin-right: 0.5rem;
+}
+
+.nav h1 {
+  margin: 0.5rem 0;
+  line-height: 1rem;
+}
+
+.nav h1 span {
+  font-size: 1rem;
+}
+/*# sourceMappingURL=Navigation.module.css.map */
