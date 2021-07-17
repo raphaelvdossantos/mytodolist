@@ -5,9 +5,20 @@ import TextEditorComponent from "../texteditorcomponent/TextEditorComponent";
 
 interface IFormProps {
   task: ITask;
+  handleSetNewTask: (property: string, value: any) => void;
 }
 
-export default function FormComponent({ task }: IFormProps) {
+export default function FormComponent({ task, handleSetNewTask }: IFormProps) {
+  function handleOnchange(event: any, property: string) {
+    const { value } = event.target;
+    if (value) {
+      handleSetNewTask(
+        property,
+        value == "expirationDate" ? new Date(value) : value
+      );
+    }
+  }
+
   return task ? (
     <main className={styles.taskEditor}>
       <form className={styles.form} action="#" method="POST">
@@ -28,7 +39,8 @@ export default function FormComponent({ task }: IFormProps) {
               type="text"
               id={styles.description}
               name="description"
-              value={task.description || ""}
+              defaultValue={task.description || ""}
+              onChange={(event) => handleOnchange(event, "description")}
             />
           </label>
           <label htmlFor="category">
@@ -36,7 +48,8 @@ export default function FormComponent({ task }: IFormProps) {
             <input
               name="category"
               list="category"
-              value={task.category || ""}
+              defaultValue={task.category || ""}
+              onChange={(event) => handleOnchange(event, "category")}
             />
           </label>
         </div>
@@ -47,7 +60,7 @@ export default function FormComponent({ task }: IFormProps) {
               type="date"
               name="creationDate"
               id={styles.creationDate}
-              value={task.creationDate?.toString() || ""}
+              defaultValue={task.creationDate?.toString() || ""}
               readOnly
             />
           </label>
@@ -57,15 +70,15 @@ export default function FormComponent({ task }: IFormProps) {
               type="date"
               name="expirationDate"
               id="expirationDate"
-              defaultValue=""
-              value={task.expirationDate?.toString() || ""}
+              defaultValue={task.expirationDate?.toString() || ""}
+              onChange={(event) => handleOnchange(event, "expirationDate")}
             />
           </label>
         </div>
         <div className={styles.details}>
           <label>TASK DETAILS</label>
           <div id={styles.detailsEditor}>
-            <TextEditorComponent />
+            <TextEditorComponent setDetails={handleSetNewTask} />
           </div>
         </div>
       </form>

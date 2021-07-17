@@ -9,13 +9,8 @@ import styles from "../../../styles/pages/Wrapper.module.css";
 
 export default function TaskDetail() {
   const [task, setTask] = useState({} as ITask);
-  const router = useRouter();
 
-  const fetchTask = useCallback(async (taskId) => {
-    fetch(`http://localhost:8080/api/tasks/${taskId}`)
-      .then((response) => response.json())
-      .then((task) => setTask(task));
-  }, []);
+  const router = useRouter();
 
   const createTask = useCallback(async () => {
     fetch("http://localhost:8080/api/tasks", {
@@ -26,7 +21,15 @@ export default function TaskDetail() {
       body: JSON.stringify({}),
     })
       .then((response) => response.json())
-      .then((newTask) => setTask(newTask));
+      .then((newTask) => {
+        setTask(newTask);
+      });
+  }, []);
+
+  const fetchTask = useCallback(async (taskId) => {
+    fetch(`http://localhost:8080/api/tasks/${taskId}`)
+      .then((response) => response.json())
+      .then((task) => setTask(task));
   }, []);
 
   useEffect(() => {
@@ -34,14 +37,24 @@ export default function TaskDetail() {
     taskId ? fetchTask(taskId) : createTask();
   }, [router.query, fetchTask, createTask]);
 
-  function handleSave() {}
+  function handleSave() {
+    if (task.description) {
+      fetch(`http://localhost:8080/api/tasks/${task.id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(task),
+      });
+    }
+  }
 
   function handleClear() {
     setTask({} as ITask);
   }
 
   function deleteTask(taskId: string) {
-    if (taskId) {
+    if (!task.description) {
       return fetch(`http://localhost:8080/api/tasks/${taskId}`, {
         method: "DELETE",
       });
@@ -51,7 +64,12 @@ export default function TaskDetail() {
   }
 
   function returnHome(taskId: string) {
-    deleteTask(taskId).then(() => router.back());
+    deleteTask(taskId).then(() => router.push("/"));
+  }
+
+  function handleSetNewTask(property: string, value: any) {
+    task[property] = value;
+    setTask(task);
   }
 
   return (
@@ -65,7 +83,7 @@ export default function TaskDetail() {
         handleSave={handleSave}
         handleReturn={returnHome}
       />
-      <FormComponent task={task} />
+      <FormComponent task={task} handleSetNewTask={handleSetNewTask} />
     </main>
   );
 }
